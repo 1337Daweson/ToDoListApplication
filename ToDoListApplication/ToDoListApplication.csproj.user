@@ -5,12 +5,8 @@
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
     <ActiveDebugProfile>Windows Machine</ActiveDebugProfile>
   </PropertyGroup>
-  <ItemGroup>
-    <MauiXaml Update="AboutUs.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-    <MauiXaml Update="SecondPage.xaml">
-      <SubType>Designer</SubType>
-    </MauiXaml>
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <ItemGroup />
 </Project>

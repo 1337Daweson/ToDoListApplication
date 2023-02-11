@@ -1,56 +1,140 @@
+using ToDoListApplication.Manager;
 using ToDoListApplication.Models;
 
 namespace ToDoListApplication;
 
 public class ToDoList : ContentPage
 {
-    private ListView listView;
-    private Entry taskEntry;
-    private Button addButton;
+    StackLayout toDoListLayout;
+
     public ToDoList()
-	{
+    {
         Title = "To-Do List";
-        listView = new ListView();
-        taskEntry = new Entry();
-        addButton = new Button();
 
-        taskEntry.Placeholder = "Enter new task";
+        TaskItem item = new TaskItem() { Name = "Walk a dog", Description = "Take a long trip", IsComplete = false };
+        TaskItem item2 = new TaskItem() { Name = "Clean", Description = "Clean my bedrom and kitchen", IsComplete = false };
+        TaskItem item3 = new TaskItem() { Name = "Beat the meat", Description = "Jerk OFF!", IsComplete = false };
+        TaskItem item4 = new TaskItem() { Name = "Koitus", Description = "Fuck my girl", IsComplete = false };
 
-        addButton.Text = "Add";
-        addButton.Clicked += AddButton_Clicked;
+        App.manager.Items.Add(item);
+        App.manager.Items.Add(item2);
+        App.manager.Items.Add(item3);
+        App.manager.Items.Add(item4);
+        
 
-        listView.ItemTemplate = new DataTemplate(typeof(TaskItem));
-        listView.ItemSelected += ListView_ItemSelected;
-        listView.ItemsSource = App.ToDoManager
-        Content = new VerticalStackLayout
-		{
-			Children = {
-                listView,
-                taskEntry,
-                addButton,
-                new Label { HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, Text = "Welcome to First Page!"
-				}
-			}
-		};
-	}
-
-    private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-        throw new NotImplementedException();
-    }
-
-    private void AddButton_Clicked(object sender, EventArgs e)
-    {
-        throw new NotImplementedException();
-    }
-
-    public class ToDoItemCell : ViewCell
-    {
-        public ToDoItemCell()
+        toDoListLayout = new StackLayout
         {
-            var label = new Label();
-            label.SetBinding(Label.TextProperty, "Name");
-            View = label;
+            Orientation = StackOrientation.Vertical,
+            VerticalOptions = LayoutOptions.FillAndExpand,
+            Padding = new Thickness(20, 20, 20, 20)
+        };
+
+        foreach (var toDoItem in App.manager.Items)
+        {
+            StackLayout toDoItemLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Vertical,
+                Spacing = 20
+            };
+
+            Label nameLabel = new Label
+            {
+                Text = toDoItem.Name,
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center
+            };
+
+            Label descriptionLabel = new Label
+            {
+                Text = toDoItem.Description,
+                VerticalOptions = LayoutOptions.Center
+            };
+
+            Switch isCompleteSwitch = new Switch
+            {
+                IsToggled = toDoItem.IsComplete,
+                VerticalOptions = LayoutOptions.Center
+            };
+
+            toDoItemLayout.Children.Add(nameLabel);
+            toDoItemLayout.Children.Add(descriptionLabel);
+            toDoItemLayout.Children.Add(isCompleteSwitch);
+            toDoListLayout.Children.Add(toDoItemLayout);
+        }
+
+        Button addToDoButton = new Button
+        {
+            Text = "Add To-Do",
+            HorizontalOptions = LayoutOptions.End,
+            VerticalOptions = LayoutOptions.End,
+            BackgroundColor = Color.FromHex("#2196F3"),
+            TextColor = Color.FromHex("#FFFFFF")
+        };
+
+        addToDoButton.Clicked += AddToDoButton_Clicked;
+
+        Content = new StackLayout
+        {
+            Children =
+                {
+                    toDoListLayout,
+                    addToDoButton
+                }
+        };
+    }
+
+    private async void AddToDoButton_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new AddPage());
+
+        
+        
+
+    }
+
+    public void UpdateToDoList()
+    {
+        int b = toDoListLayout.Count();
+        toDoListLayout.Children.Clear();
+
+        // Add a StackLayout for each TaskItem in the data source
+        foreach (TaskItem item in App.manager.Items)
+        {
+            StackLayout toDoItemLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Vertical,
+                Spacing = 20
+            };
+
+            Label nameLabel = new Label
+            {
+                Text = item.Name,
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center
+            };
+
+            Label descriptionLabel = new Label
+            {
+                Text = item.Description,
+                VerticalOptions = LayoutOptions.Center
+            };
+
+            Switch isCompleteSwitch = new Switch
+            {
+                IsToggled = item.IsComplete,
+                VerticalOptions = LayoutOptions.Center
+            };
+
+            toDoItemLayout.Children.Add(nameLabel);
+            toDoItemLayout.Children.Add(descriptionLabel);
+            toDoItemLayout.Children.Add(isCompleteSwitch);
+            toDoListLayout.Children.Add(toDoItemLayout);
+
+            int a = toDoListLayout.Count();
         }
     }
+    
+
+
+
 }
