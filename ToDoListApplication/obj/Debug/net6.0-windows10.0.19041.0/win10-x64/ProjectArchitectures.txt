@@ -1,0 +1,1 @@
+B:\github\projects\school\ToDoListApplication\ToDoListApplication\ToDoListApplication.csproj;x64
