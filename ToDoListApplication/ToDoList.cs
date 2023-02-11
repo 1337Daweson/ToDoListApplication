@@ -94,7 +94,6 @@ public class ToDoList : ContentPage
 
     public void UpdateToDoList()
     {
-        int b = toDoListLayout.Count();
         toDoListLayout.Children.Clear();
 
         // Add a StackLayout for each TaskItem in the data source
