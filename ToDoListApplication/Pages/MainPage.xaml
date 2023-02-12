@@ -23,7 +23,7 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Welcome to .NET Multi-platform App UI"
+                Text="Welcome to ´ToDoListApp"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
@@ -36,10 +36,8 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
-            <Button
-                Text="Lets Get Started!"
-                Clicked="Button_go_to_New_page"
-                HorizontalOptions="Center" />
+
+
 
         </VerticalStackLayout>
     </ScrollView>

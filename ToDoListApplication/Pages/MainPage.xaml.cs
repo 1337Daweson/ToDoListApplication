@@ -20,10 +20,5 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
-
-	private async void Button_go_to_New_page(object sender, EventArgs e)
-	{
-		await Shell.Current.GoToAsync("NewPage");
-	}
 }
 

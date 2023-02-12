@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoListApplication.ItemsPage"
+             Title="ItemsPage">
+    <StackLayout>
+        <ListView x:Name="ToDoListView"
+                ItemSelected="ToDoListView_ItemSelected"
+                ItemsSource="{Binding Items}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label VerticalOptions="Center" Text="{Binding Name}"                                
+                       FontAttributes="Bold"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Add Task"
+              HorizontalOptions="End"
+              VerticalOptions="End"
+              BackgroundColor="#2196F3"
+              TextColor="#FFFFFF"
+              Clicked="AddToDoButton_Clicked"/>
+    </StackLayout>
+</ContentPage>

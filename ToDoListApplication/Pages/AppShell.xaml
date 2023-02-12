@@ -11,15 +11,14 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
-    <ShellContent
-        Title="SecondPage!!!"
-        ContentTemplate="{DataTemplate local:SecondPage}"
-        Route="SecondPage" />
 
     <ShellContent
-        Title="Thirderino :)"
-        ContentTemplate="{DataTemplate local:AboutUs}"
-        Route="IDK" />
+        Title="ToDoList"
+        ContentTemplate="{DataTemplate local:ItemsPage}"
+        Route="ToDoList" />
+
+
+
 
 
 </Shell>

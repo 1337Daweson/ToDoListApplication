@@ -15,11 +15,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = ToDoListApplication.App.xa
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[B:/github/projects/school/ToDoListApplication/ToDoListApplication/Pages/AboutUs.xaml]
+[B:/github/projects/school/ToDoListApplication/ToDoListApplication/ItemsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = ToDoListApplication.Pages.AboutUs.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\AboutUs.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\AboutUs.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ToDoListApplication.ItemsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = ItemsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = ItemsPage.xaml
 
 [B:/github/projects/school/ToDoListApplication/ToDoListApplication/Pages/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -27,17 +27,17 @@ build_metadata.AdditionalFiles.ManifestResourceName = ToDoListApplication.Pages.
 build_metadata.AdditionalFiles.TargetPath = Pages\AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\AppShell.xaml
 
+[B:/github/projects/school/ToDoListApplication/ToDoListApplication/Pages/ItemDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ToDoListApplication.Pages.ItemDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ItemDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ItemDetailPage.xaml
+
 [B:/github/projects/school/ToDoListApplication/ToDoListApplication/Pages/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ToDoListApplication.Pages.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MainPage.xaml
-
-[B:/github/projects/school/ToDoListApplication/ToDoListApplication/Pages/SecondPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = ToDoListApplication.Pages.SecondPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\SecondPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\SecondPage.xaml
 
 [B:/github/projects/school/ToDoListApplication/ToDoListApplication/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
